@@ -35,7 +35,7 @@ project logo and maintained in the upstream gummiboot Git tree.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/upstream
 
 # >> setup
 # << setup

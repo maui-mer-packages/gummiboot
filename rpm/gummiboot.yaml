@@ -9,6 +9,7 @@ URL         : http://cgit.freedesktop.org/gummiboot/
 SCM         : git://anongit.freedesktop.org/gummiboot
 Sources     :
     - "%{name}-%{version}.tar.xz"
+SetupOptions: -q -n %{name}-%{version}/upstream
 ExclusiveArch: "%ix86 x86_64"
 
 Configure: reconfigure
