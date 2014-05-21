@@ -1,0 +1,38 @@
+Name        : gummiboot
+Version     : 45
+Release     : 1
+Group       : System/Boot
+License     : LGPL-2.1
+Summary     : EFI Kernel loader
+Description : Gummiboot is a simple EFI bootloader.
+URL         : http://cgit.freedesktop.org/gummiboot/
+SCM         : git://anongit.freedesktop.org/gummiboot
+Sources     :
+    - "%{name}-%{version}.tar.xz"
+ExclusiveArch: "%ix86 x86_64"
+
+Configure: reconfigure
+ConfigOptions:
+    - --with-efi-libdir=%{_libdir}
+    - --with-efi-ldsdir=%{_libdir}
+Builder: single-make
+
+PkgBR:
+    - gnu-efi
+PkgConfigBR:
+    - blkid
+
+Files:
+    - "%{_bindir}/gummiboot"
+    - "%{_libdir}/gummiboot/gummiboot*.efi"
+
+SubPackages:
+    - Name: splash
+      Summary: Gummiboot default splash image
+      Description: |
+        This package contains the Gummiboot default splash image. It's the
+        project logo and maintained in the upstream gummiboot Git tree.
+      Group: System/Boot
+      BuildArch: noarch
+      Files:
+          - "%{_datadir}/%{name}/splash.bmp"
