@@ -52,22 +52,22 @@ project logo and maintained in the upstream gummiboot Git tree.
 
 %build
 # >> build pre
+%reconfigure --libexecdir=%{_prefix}/lib
+make V=1 %{?_smp_mflags}
 # << build pre
 
-%reconfigure --disable-static \
-    --with-efi-libdir=%{_libdir} \
-    --with-efi-ldsdir=%{_libdir}
 
-make
 
 # >> build post
+#mv gummiboot%{machine_type_name}.efi gummiboot%{machine_type_name}.orig
+#%pesign -s -i gummiboot%{machine_type_name}.orig -o gummiboot%{machine_type_name}.efi
 # << build post
 
 %install
 rm -rf %{buildroot}
 # >> install pre
-# << install pre
 %make_install
+# << install pre
 
 # >> install post
 # << install post

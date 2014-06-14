@@ -22,11 +22,8 @@ Sources     :
 SetupOptions: -q -n %{name}-%{version}/upstream
 ExclusiveArch: "%ix86 x86_64"
 
-Configure: reconfigure
-ConfigOptions:
-    - --with-efi-libdir=%{_libdir}
-    - --with-efi-ldsdir=%{_libdir}
-Builder: single-make
+Configure: none
+Builder: none
 
 PkgBR:
     - gnu-efi
