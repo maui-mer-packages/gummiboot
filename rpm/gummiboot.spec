@@ -74,8 +74,10 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+%doc README LICENSE
 %{_bindir}/gummiboot
-%{_libdir}/gummiboot/gummiboot*.efi
+%dir %{_prefix}/lib/gummiboot
+%{_prefix}/lib/gummiboot/gummiboot*.efi
 # >> files
 # << files
 

@@ -31,8 +31,10 @@ PkgConfigBR:
     - blkid
 
 Files:
+    - "%doc README LICENSE"
     - "%{_bindir}/gummiboot"
-    - "%{_libdir}/gummiboot/gummiboot*.efi"
+    - "%dir %{_prefix}/lib/gummiboot"
+    - "%{_prefix}/lib/gummiboot/gummiboot*.efi"
 
 SubPackages:
     - Name: splash
