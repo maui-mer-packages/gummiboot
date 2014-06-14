@@ -3,8 +3,18 @@ Version     : 45
 Release     : 1
 Group       : System/Boot
 License     : LGPL-2.1
-Summary     : EFI Kernel loader
-Description : Gummiboot is a simple EFI bootloader.
+Summary     : Simple EFI Boot Manager
+Description : |
+  gummiboot is a simple UEFI boot manager which executes configured EFI
+  images. The default entry is selected by a configured pattern (glob)
+  or an on-screen menu.
+
+  gummiboot operates on the EFI System Partition (ESP) only. gummiboot
+  reads simple and entirely generic boot loader configuration files;
+  one file per boot loader entry to select from.
+
+  Configuration file fragments, kernels, initrds, other EFI images need
+  to reside on the ESP.
 URL         : http://cgit.freedesktop.org/gummiboot/
 SCM         : git://anongit.freedesktop.org/gummiboot
 Sources     :

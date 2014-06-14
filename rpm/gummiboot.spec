@@ -8,7 +8,7 @@ Name:       gummiboot
 # >> macros
 # << macros
 
-Summary:    EFI Kernel loader
+Summary:    Simple EFI Boot Manager
 Version:    45
 Release:    1
 Group:      System/Boot
@@ -21,7 +21,17 @@ BuildRequires:  pkgconfig(blkid)
 BuildRequires:  gnu-efi
 
 %description
-Gummiboot is a simple EFI bootloader.
+gummiboot is a simple UEFI boot manager which executes configured EFI
+images. The default entry is selected by a configured pattern (glob)
+or an on-screen menu.
+
+gummiboot operates on the EFI System Partition (ESP) only. gummiboot
+reads simple and entirely generic boot loader configuration files;
+one file per boot loader entry to select from.
+
+Configuration file fragments, kernels, initrds, other EFI images need
+to reside on the ESP.
+
 
 %package splash
 Summary:    Gummiboot default splash image
