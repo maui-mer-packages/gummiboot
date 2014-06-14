@@ -72,6 +72,11 @@ rm -rf %{buildroot}
 # >> install post
 # << install post
 
+%post
+# >> post
+/usr/bin/gummiboot update >/dev/null 2>&1 || :
+# << post
+
 %files
 %defattr(-,root,root,-)
 %doc README LICENSE
