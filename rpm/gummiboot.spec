@@ -33,17 +33,6 @@ Configuration file fragments, kernels, initrds, other EFI images need
 to reside on the ESP.
 
 
-%package splash
-Summary:    Gummiboot default splash image
-Group:      System/Boot
-BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
-
-%description splash
-This package contains the Gummiboot default splash image. It's the
-project logo and maintained in the upstream gummiboot Git tree.
-
-
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
@@ -85,9 +74,3 @@ rm -rf %{buildroot}
 %{_prefix}/lib/gummiboot/gummiboot*.efi
 # >> files
 # << files
-
-%files splash
-%defattr(-,root,root,-)
-%{_datadir}/%{name}/splash.bmp
-# >> files splash
-# << files splash
