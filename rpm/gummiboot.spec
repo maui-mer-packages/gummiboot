@@ -18,7 +18,7 @@ URL:        http://cgit.freedesktop.org/gummiboot/
 Source0:    %{name}-%{version}.tar.xz
 Source100:  gummiboot.yaml
 BuildRequires:  pkgconfig(blkid)
-BuildRequires:  gnu-efi
+BuildRequires:  gnu-efi-devel
 
 %description
 gummiboot is a simple UEFI boot manager which executes configured EFI
