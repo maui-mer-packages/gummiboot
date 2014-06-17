@@ -52,8 +52,8 @@ project logo and maintained in the upstream gummiboot Git tree.
 
 %build
 # >> build pre
-%reconfigure --libexecdir=%{_prefix}/lib
-make V=1 %{?_smp_mflags}
+%reconfigure
+make V=1 -j1
 # << build pre
 
 
